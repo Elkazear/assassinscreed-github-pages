@@ -201,7 +201,7 @@ Build the scene and rotate on hover
   transition: transform 350ms;
 }
 
-.movie:hover:focus {
+.movie:hover, .movie:focus {
   -webkit-transform: rotateY(-78deg) translateZ(20px);
   -moz-transform: rotateY(-78deg) translateZ(20px);
   transform: rotateY(-78deg) translateZ(20px);
