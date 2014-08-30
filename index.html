@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/icon.png" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -17,6 +19,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <script src="js/modernizr.custom.63321.js"></script>
+
   </head>
   <body>
     <div class="site-wrapper">
@@ -27,21 +31,27 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Assassin's creed fan site</h3>
+              <a href="index.html"><img class="masthead-brand" src="images/assassinscreed_logo.png" width="200px" alt="Logo Assassin's Creed" /> </a>
               <ul class="nav masthead-nav">
                 <li class="active"><a href="index.html">Accueil</a></li>
-                <li><a href="#">Galeries</a></li>
-                <li><a href="#">Histoires</a></li>
-                <li><a href="games.html">Jeux</a></li>
+                <li><a href="#">Jeux</a></li>
               </ul>
             </div>
           </div>
-
           <div class="inner cover">
             <h1 class="cover-heading">Assassin's creed fan site</h1>
-            <p class="lead">Bienvenue sur notre tout nouveau site de fan d'assassin's creed, vous y trouverez toutes les dernières nouvelles ainsi que l'histoire de cette licence culte !</p>   
+            <p class="lead">Bienvenue sur notre tout nouveau site de fan d'assassin's creed, vous y trouverez toutes les dernières nouvelles ainsi que l'histoire de cette licence culte !</p>
+            <button type="button" class="btn btn-default">Inscrivez-vous !</button>  
           </div>
-          
+          <div class="fleft">
+            <select id="cd-dropdown" class="cd-select">
+              <option value="-1" selected>Suivez-nous !</option>
+              <option value="1" class="icon-google-plus">Google Plus</option>
+              <option value="2" class="icon-facebook">Facebook</option>
+              <option value="3" class="icon-twitter">Twitter</option>
+              <option value="4" class="icon-github">GitHub</option>
+            </select>
+          </div>
         </div>
 
       </div>
@@ -51,5 +61,19 @@
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dropdown.js"></script>
+    <script type="text/javascript">
+      
+      $( function() {
+        
+        $( '#cd-dropdown' ).dropdown( {
+          gutter : 5,
+          delay : 100,
+          random : true
+        } );
+
+      });
+
+    </script>
   </body>
 </html>
