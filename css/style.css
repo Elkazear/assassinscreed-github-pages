@@ -182,7 +182,7 @@ body {
   position: relative;
   cursor: pointer;
   border-radius: 10px;
-  background:#cfcfcf;
+  background: #cfcfcf;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434"); /* Pour IE seulement et mode gradient à linear */
   background: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
   background: -webkit-linear-gradient(#cfcfcf, #343434);
@@ -288,7 +288,7 @@ body {
 }
 
 .cd-active.cd-dropdown ul li span:hover {
-  color: #fff;
+  color: #9a0000;
 }
 
 .cd-dropdown,
@@ -302,8 +302,6 @@ body {
   box-shadow: 0px 0px 10px #343434;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius: 10px;
-  border: 1px solid #656565;
   background:#cfcfcf;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434"); /* Pour IE seulement et mode gradient à linear */
   background: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
@@ -312,7 +310,6 @@ body {
   background: -o-linear-gradient(#cfcfcf, #343434); 
   background: -ms-linear-gradient(#cfcfcf, #343434); 
   background: linear-gradient(#cfcfcf, #343434);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9a0000", endColorstr="#cfcfcf"); /* Pour IE seulement et mode gradient à linear */
 }
 
 @font-face {
@@ -352,4 +349,135 @@ body {
 }
 .icon-github:before {
   content: "\24";
+}
+
+/* Hover effect for games.html */
+
+figure.effect-hover {
+  background: transparent;
+}
+
+figure.effect-hover img {
+  opacity: 1;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+figure.effect-hover:hover img {
+  opacity: 0.4;
+}
+
+figure.effect-hover figcaption::before,
+figure.effect-hover figcaption::after {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-hover figcaption::before {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+figure.effect-hover figcaption::after {
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  -webkit-transform: scale(1,0);
+  transform: scale(1,0);
+}
+
+figure.effect-hover h2 {
+  padding-top: 30%;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0,-20px,0);
+  transform: translate3d(0,-20px,0);
+}
+
+figure.effect-hover p {
+  padding: 20px 2.5em;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,20px,0);
+  transform: translate3d(0,20px,0);
+}
+
+figure.effect-hover:hover figcaption::before,
+figure.effect-hover:hover figcaption::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+figure.effect-hover:hover h2,
+figure.effect-hover:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.grid {
+  overflow: hidden;
+  margin: 0;
+  padding: 3em 0 0 0;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+
+.grid figure {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  margin: -0.135em;
+  width: 100%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid figure img {
+  position: relative;
+  display: block;
+  min-width: 100%;
+  opacity: 1;
+}
+
+.grid figure figcaption {
+  padding: 2em;
+  color: #fff;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  figure.effect-hover:hover p {
+  opacity: 0;
+ }
 }
